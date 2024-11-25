@@ -10,13 +10,13 @@ import sidefolioTailwindMasterKit2 from "public/images/sidefolio-tailwindmasterk
 export const products = [
   {
     href: "https://aceternity.com",
-    title: "Aceternity",
+    title: "Lawyer GPT",
     description:
-      "A design and development studio that focuses on building quality apps.",
+      "AI Assistant for Legal Professionals and Students.",
     thumbnail: sidefolioAceternity,
     images: [sidefolioAceternity, sidefolioAceternity2],
-    stack: ["Nextjs", "Tailwindcss"],
-    slug: "aceternity",
+    stack: [" Python", "Gradio"," Langchain", "OpenAI", "RAG", "LLM", "Fine-tuning."],
+    slug: "Lawyer GPT",
     content: (
       <div>
         <p>
