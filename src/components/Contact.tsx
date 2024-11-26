@@ -15,14 +15,39 @@ const defaultFormState = {
     error: "",
   },
 };
+
 export const Contact = () => {
   const [formData, setFormData] = useState(defaultFormState);
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
-    // Write your submit logic here
-    console.log(formData);
+
+    const { name, email, message } = formData;
+
+    try {
+      const response = await fetch("https://formspree.io/f/xkgnvvky", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: name.value,
+          email: email.value,
+          message: message.value,
+        }),
+      });
+
+      if (response.ok) {
+        alert("Thank you! Your message has been sent.");
+        // Reset form state
+        setFormData(defaultFormState);
+      } else {
+        alert("Oops! Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error sending message:", error);
+      alert("There was an error sending your message. Please try again.");
+    }
   };
+
   return (
     <form className="form" onSubmit={handleSubmit}>
       <div className="flex flex-col md:flex-row justify-between gap-5">
