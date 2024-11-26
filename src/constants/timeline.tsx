@@ -1,8 +1,8 @@
 export const timeline = [
   {
-    company: "Amazon",
-    title: "Senior Software Engineer",
-    date: "2022 - Present",
+    company: "Nexawings",
+    title: "COO",
+    date: "2023 - PresenT",
     description: "Building the future of e-commerce",
     responsibilities: [
       "Developed a new feature that improves the shopping experience",
@@ -12,9 +12,9 @@ export const timeline = [
     ],
   },
   {
-    company: "Google",
-    title: "Senior Software Engineer",
-    date: "2021 - 2022",
+    company: "IEDC CSE",
+    title: "AI RESEARCHER",
+    date: "2023 - PRESENT",
     description: "Building the future of search",
     responsibilities: [
       "Improved the search algorithm to provide more relevant results",
