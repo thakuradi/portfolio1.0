@@ -7,12 +7,12 @@ import {
 
 export const socials = [
   {
-    href: "https://twitter.com/mannupaaji",
+    href: "https://www.linkedin.com/in/aditya-kumar-34ab42222/",
     label: "Twitter",
     icon: IconBrandTwitter,
   },
   {
-    href: "https://linkedin.com/in/manuarora28",
+    href: "https://www.linkedin.com/in/aditya-kumar-34ab42222/",
     label: "LinkedIn",
     icon: IconBrandLinkedin,
   },
