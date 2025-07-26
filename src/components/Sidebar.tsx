@@ -18,6 +18,33 @@ export const Sidebar = () => {
 
   return (
     <>
+      {/* Mobile Top Navbar */}
+      <div className="lg:hidden fixed top-0 left-0 right-0 z-[200] bg-white border-b border-neutral-200 px-4 py-3 flex items-center justify-between">
+        <div className="flex items-center space-x-2">
+          <Image
+            src="/images/aditya.png"
+            alt="Avatar"
+            height="32"
+            width="32"
+            className="object-cover object-top rounded-full flex-shrink-0"
+          />
+          <div className="flex text-sm flex-col">
+            <p className="font-bold text-primary">Aditya Kumar</p>
+            <p className="font-light text-secondary text-xs">Developer</p>
+          </div>
+        </div>
+        <div className="flex items-center space-x-3">
+          <Badge href="/resume" text="Resume" />
+          <button
+            className="h-8 w-8 border border-neutral-200 rounded-full backdrop-blur-sm flex items-center justify-center"
+            onClick={() => setOpen(!open)}
+          >
+            <IconLayoutSidebarRightCollapse className="h-4 w-4 text-secondary" />
+          </button>
+        </div>
+      </div>
+
+      {/* Desktop/Mobile Sidebar */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -25,24 +52,20 @@ export const Sidebar = () => {
             animate={{ x: 0 }}
             transition={{ duration: 0.2, ease: "linear" }}
             exit={{ x: -200 }}
-            className="px-6  z-[100] py-10 bg-neutral-100 max-w-[14rem] lg:w-fit  fixed lg:relative  h-screen left-0 flex flex-col justify-between"
+            className="px-6 z-[100] py-10 bg-neutral-100 max-w-[14rem] lg:w-fit fixed lg:relative h-screen left-0 flex flex-col justify-between lg:mt-0 mt-16"
           >
             <div className="flex-1 overflow-auto">
-              <SidebarHeader />
+              <div className="hidden lg:block">
+                <SidebarHeader />
+              </div>
               <Navigation setOpen={setOpen} />
             </div>
-            <div onClick={() => isMobile() && setOpen(false)}>
+            <div className="hidden lg:block" onClick={() => isMobile() && setOpen(false)}>
               <Badge href="/resume" text="Read Resume" />
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-      <button
-        className="fixed lg:hidden bottom-4 right-4 h-8 w-8 border border-neutral-200 rounded-full backdrop-blur-sm flex items-center justify-center z-50"
-        onClick={() => setOpen(!open)}
-      >
-        <IconLayoutSidebarRightCollapse className="h-4 w-4 text-secondary" />
-      </button>
     </>
   );
 };
