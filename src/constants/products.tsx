@@ -2,7 +2,89 @@ import orom from "public/images/orom.png"
 import blockchain from "public/images/blockchain.jpg"
 import lawyergpt from "public/images/lawyergpt.png"
 import gocpt from "/public/images/gocpt.png"
+import invoiceGenerator from "public/images/Invoice_generator.png"
+import messenger from "public/images/messanger.png"
+import companyExtractor from "public/images/company_extractor.jpg"
+
 export const products = [
+  {
+    href: "https://github.com/thakuradi/CompanyInfo_extractor",
+    title: "Company Info Extractor",
+    description:
+      "AI-powered web extraction tool using LangChain, LangGraph, and LangSmith to automatically research and structure company information with agentic workflows.",
+    thumbnail: companyExtractor,
+    images: [companyExtractor],
+    stack: ["LangChain", "LangGraph", "LangSmith", "Python", "AI Agents", "JSON Schema", "Pydantic"],
+    slug: "company-info-extractor",
+    content: (
+      <div>
+        <p>
+          The Company Info Extractor is an advanced AI-powered web application that automates the research and extraction of structured company information using cutting-edge agentic workflows. Built with LangChain ecosystem tools, it demonstrates sophisticated AI orchestration for real-world data extraction challenges.
+        </p>
+        <p>
+          <strong>Core AI Features:</strong> Automated research phase with LLM-driven search queries, schema-based data extraction ensuring consistency and completeness, iterative refinement through reflection loops, and intelligent content aggregation from multiple sources. The system emulates advanced company research agents with self-improving capabilities.
+        </p>
+        <p>
+          <strong>Technical Architecture:</strong> LangChain orchestrates chain-of-thought workflows and manages retrieval relations, LangGraph models the agent pipeline as a stateful graph structure, and LangSmith provides comprehensive traceability and debugging for reliable performance monitoring.
+        </p>
+        <p>
+          <strong>Workflow Innovation:</strong> The system processes user input for target companies, executes intelligent research through generated queries, performs structured extraction with JSON schema enforcement, and implements reflection loops for data completeness. This results in reliable, structured outputs ready for analytics and downstream applications.
+        </p>
+      </div>
+    ),
+  },
+  {
+    href: "https://github.com/thakuradi/messenger",
+    title: "Messenger Platform",
+    description:
+      "Real-time messaging platform with TypeScript, supporting one-on-one and group chat functionality with modern communication features.",
+    thumbnail: messenger,
+    images: [messenger],
+    stack: ["TypeScript", "React", "Node.js", "Socket.IO", "MongoDB", "WebSockets"],
+    slug: "messenger-platform",
+    content: (
+      <div>
+        <p>
+          A comprehensive real-time messaging platform built with TypeScript that delivers smooth and modern communication experiences. The application supports both individual and group conversations with instant message synchronization and responsive design across all devices.
+        </p>
+        <p>
+          <strong>Core Features:</strong> Real-time messaging using WebSocket technology, group chat support for multi-user conversations, secure user authentication and profile management, comprehensive message management including editing and deletion, and responsive UI/UX optimized for both desktop and mobile devices.
+        </p>
+        <p>
+          <strong>Technical Architecture:</strong> Built with a full TypeScript stack featuring React frontend, Node.js backend with Express, Socket.IO for real-time communication, and MongoDB for data persistence. The application ensures minimal latency and scalable messaging solutions suitable for teams and communities.
+        </p>
+        <p>
+          <strong>Impact & Scalability:</strong> Provides essential chat functionality with a foundation ready for extensions like video calls, voice notes, encrypted messaging, and file sharing. The platform demonstrates modern web development practices with real-time capabilities and enterprise-ready architecture.
+        </p>
+      </div>
+    ),
+  },
+  {
+    href: "https://github.com/thakuradi/Invoice_Generator",
+    title: "Invoice Generator",
+    description:
+      "Professional invoice creation tool with dynamic calculations, PDF export, and real-time totals - perfect for freelancers and small businesses.",
+    thumbnail: invoiceGenerator,
+    images: [invoiceGenerator],
+    stack: ["React", "JavaScript", "jsPDF", "HTML/CSS", "Vercel"],
+    slug: "invoice-generator",
+    content: (
+      <div>
+        <p>
+          The Invoice Generator is a comprehensive web application designed to streamline the invoicing process for freelancers and small businesses. Built with a focus on user experience and functionality, it allows users to create, preview, and download professional invoices directly from their browser without any sign-up requirements.
+        </p>
+        <p>
+          <strong>Key Features:</strong> Dynamic form inputs for flexible item management, real-time calculations that automatically update totals as users modify details, and seamless PDF export functionality. The application supports multiple line items with quantity, unit price, tax, and discount calculations, ensuring accuracy and professionalism in every invoice.
+        </p>
+        <p>
+          <strong>Technical Implementation:</strong> Built using React with responsive design principles, the application leverages modern JavaScript for dynamic calculations and PDF generation libraries for document export. Deployed on Vercel for optimal performance and reliability.
+        </p>
+        <p>
+          <strong>Business Value:</strong> Provides a cost-effective solution for professional invoicing, reduces manual calculation errors, and offers portability through PDF export. The tool addresses the common pain points of small businesses and freelancers who need quick, professional invoice generation without subscription costs.
+        </p>
+      </div>
+    ),
+  },
   {
     href: "",
     title: "Lawyer GPT",

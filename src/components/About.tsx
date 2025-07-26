@@ -1,5 +1,6 @@
 "use client";
 import { Paragraph } from "@/components/Paragraph";
+import { Highlight } from "@/components/Highlight";
 import Image from "next/image";
 
 import { motion } from "framer-motion";
@@ -71,47 +72,29 @@ export default function About() {
 
       <div className="max-w-4xl">
         <Paragraph className=" mt-4">
-          Hey there, I&apos;m Aditya - a passionate developer, avid writer,
-          and a connoisseur of awesome design. Welcome to my corner of the
-          digital world!
+          Hey there, I&apos;m <Highlight>Aditya Kumar</Highlight> — a passionate developer, writer, and design enthusiast—and welcome to my digital playground.
         </Paragraph>
         <Paragraph className=" mt-4">
-          Since the early days of my journey, I&apos;ve been captivated by the
-          art of crafting exceptional digital experiences. As a developer, I
-          thrive on turning lines of code into functional and elegant solutions.
-          My goal is to not just create software, but to build digital marvels
-          that seamlessly merge form and function.
+          My journey began with curiosity and a keyboard. I&apos;ve always been captivated by transforming ideas into digital realities, weaving code that not only works but delights—and prose that informs and inspires.
         </Paragraph>
 
         <Paragraph className=" mt-4">
-          But my journey doesn&apos;t stop at coding. With a heart full of words
-          and a mind brimming with ideas, I&apos;ve ventured into the realm of
-          writing. From tech articles that unravel complex concepts to creative
-          tales that ignite the imagination, I weave words to inform, entertain,
-          and inspire.
+          <strong>💻 Coding with Purpose</strong><br/>
+          At <Highlight>Connektra.io</Highlight>, I design AI-driven agents and automation workflows—connecting platforms like Shopify, HubSpot, and ERP systems to automate mundane processes. As co‑founder of <Highlight>NexaWings</Highlight>, I lead product innovation with AI chatbots and scalable SaaS solutions—earning recognition with a <Highlight>2024 India 5000 MSME Award nomination</Highlight>.
         </Paragraph>
+        
         <Paragraph className=" mt-4">
-          What sets me apart is my unwavering appreciation for design. I believe
-          that aesthetics and usability go hand in hand. My eye for awesome
-          design ensures that every project I undertake not only works
-          flawlessly under the hood but also looks stunning on the surface.
+          From a real-time messaging app and invoice generator to AI agents built using <Highlight>LangChain, LangGraph, and LangSmith</Highlight>, my development mantra is to blend architectural rigor with clean, beautiful experience design.
         </Paragraph>
+
         <Paragraph className=" mt-4">
-          Through this website, I aim to share my insights, experiences, and
-          creations with you. Whether you&apos;re a fellow developer seeking
-          solutions, a fellow writer in search of inspiration, or simply someone
-          who appreciates the finer aspects of design, there&apos;s something
-          here for you.
+          <strong>✍️ Words with Impact</strong><br/>
+          My love for writing goes beyond documentation—it&apos;s about conveying ideas. Whether it&apos;s articles explaining AI pipelines, technical essays, or creative narratives, I believe in <Highlight>storytelling that enlightens and engages</Highlight>.
         </Paragraph>
+
         <Paragraph className=" mt-4">
-          Join me on this journey of bytes and narratives, logic and creativity,
-          code and prose. Together, we can explore the boundless possibilities
-          of technology and storytelling, all while reveling in the sheer beauty
-          of thoughtful design.
-        </Paragraph>
-        <Paragraph className=" mt-4">
-          Thank you for being here, and I can&apos;t wait to embark on this
-          adventure with you.
+          <strong>🎨 Where Form Meets Function</strong><br/>
+          Design is my secret weapon. Every interface I build is created with usability and elegance in mind. I don&apos;t just code apps—I <Highlight>craft experiences</Highlight> that feel intuitive and visually striking.
         </Paragraph>
       </div>
     </div>

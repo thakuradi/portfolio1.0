@@ -17,9 +17,10 @@ export default function Home() {
         millions of lives
       </Paragraph>
       <Paragraph className="max-w-xl mt-4">
-        I&apos;m a  software engineer with{" "}
-        <Highlight>2 years of experience</Highlight> building scalable web apps
-        that are performance optimized and good looking.
+        I&apos;m currently serving as{" "}
+        <Highlight>Full Stack Automation Engineer</Highlight> at Connektra.io, 
+        an AI-powered enterprise integration platform. I specialize in building 
+        scalable automation solutions and AI-driven workflow systems.
       </Paragraph>
       <Heading
         as="h2"
