@@ -200,7 +200,7 @@ export const products = [
     thumbnail: orom,
     images: [orom],
     stack: ["Nextjs", "Tailwindcss"],
-    slug: "algochurn",
+    slug: "orom",
     content: (
       <div>
         <p>
@@ -219,11 +219,11 @@ export const products = [
     href: "https://www.gocpt.ai/",
     title: "Gocpt",
     description:
-      "Never write from scratch again with Moonbeam, your AI first writing tool",
+      "Time-based CPT code finder that helps mental health clinicians bill accurately for counseling and care coordination",
     thumbnail: gocpt,
     images: [gocpt],
     stack: ["Nextjs", "Tailwindcss"],
-    slug: "moonbeam",
+    slug: "gocpt",
     content: (
       <div>
         <p>
@@ -243,11 +243,11 @@ export const products = [
     thumbnail:blockchain,
     images: [blockchain],
     stack: ["Nextjs", "Tailwindcss"],
-    slug: "tailwindmasterkit",
+    slug: "blockchain-bricks",
     content: (
       <div>
         <p>
-          SiNon-fungible tokens (NFTs) are a new player in the real estate market, which is always changing. The way we purchase, trade, and own property is changing as a result of these blockchain-powered digital assets. This in-depth examination of NFTs in the real estate industry looks at how they could disrupt ownership structures, transactions, and a host of other areas. It also highlights the many opportunities that blockchain technology presents.{" "}
+          Non-fungible tokens (NFTs) are a new player in the real estate market, which is always changing. The way we purchase, trade, and own property is changing as a result of these blockchain-powered digital assets. This in-depth examination of NFTs in the real estate industry looks at how they could disrupt ownership structures, transactions, and a host of other areas. It also highlights the many opportunities that blockchain technology presents.{" "}
         </p>
         <p>
         The foundational technology of NFTs, blockchain, guarantees the immutability, security, and transparency of property records. The blockchain ensures a transparent history of ownership and reduces fraud by securely recording every transaction.

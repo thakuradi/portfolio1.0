@@ -7,6 +7,17 @@ const nextConfig = {
   images: {
     domains: ["images.unsplash.com", "res.cloudinary.com"],
   },
+  async redirects() {
+    return [
+      ["algochurn", "orom"],
+      ["moonbeam", "gocpt"],
+      ["tailwindmasterkit", "blockchain-bricks"],
+    ].map(([from, to]) => ({
+      source: `/projects/${from}`,
+      destination: `/projects/${to}`,
+      permanent: true,
+    }));
+  },
   experimental: {
     mdxRs: true,
   },
