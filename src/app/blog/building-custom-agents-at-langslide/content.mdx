@@ -1,0 +1,60 @@
+import { BlogLayout } from "@/components/BlogLayout";
+
+export const meta = {
+  date: "2026-11-24",
+  title: "Building a No-Code Custom Agent Platform at Langslide",
+  description:
+    "How I built custom agents that anyone can assemble: hybrid RAG, dynamic tool routing, and a per-chat MCP sandbox so credentials never leak between conversations.",
+  image: "/images/langslide_custom_agents.png",
+  tags: ["AI Agents", "RAG", "MCP", "Python", "Langslide"],
+};
+
+export default (props) => <BlogLayout meta={meta} {...props} />;
+
+The AI CMO suite proved that specialised agents work. The next request from customers was different: "we want to build our own." A support agent over their docs, a sales agent that can read their CRM, an ops agent that talks to Postgres. No two were the same, and none of the customers wanted to write code.
+
+That became Langslide's **custom agent platform**. Here is how I approached the three problems that defined it.
+
+## Problem 1: retrieval that is either vague or brittle
+
+Every custom agent starts with "upload your documents and ask questions." Pure vector search on OpenAI embeddings was good at meaning and bad at exact things: product codes, error strings, names. Pure keyword search was the opposite.
+
+The platform uses **hybrid RAG**:
+
+- **OpenAI embeddings** for semantic matches.
+- **BM25** for exact and rare terms.
+- A **reranker** that scores the merged candidates against the actual question before anything reaches the model.
+- **Context compression** that trims each chunk to the sentences that matter, so a 128k context is not wasted on boilerplate.
+
+The reranking step made the biggest difference. Retrieval recall went up when I merged both sources, but precision only recovered once a second pass decided what to keep.
+
+## Problem 2: tools and credentials in a multi-tenant product
+
+This was the hard one. A custom agent is only useful when it can act: send an email, query a database, create a Trello card. That means credentials. The naive design attaches integrations to the agent, which means every chat using that agent has every credential, and one prompt injection away from reading another customer's inbox.
+
+I built a **per-chat MCP sandbox** on the Model Context Protocol:
+
+1. An agent is created with **no credentials at all**.
+2. When a user opens a chat, they pick which of their connected integrations that chat may use.
+3. The runtime starts an **isolated subprocess for each enabled tool**, and the only thing it passes in is a `connection_id`. The subprocess looks up the OAuth credentials itself.
+
+Chat A can have Gmail and Chat B can have Postgres, and neither process can see the other's secrets. Integrations live in a registry in MongoDB, so the frontend lists available tools dynamically and adding a new one is a server implementation plus a seed entry. Thousands of third-party tools run through this today.
+
+## Problem 3: too many tools makes the model worse
+
+Once an agent could reach dozens of tools, quality dropped. Models pick badly from long tool lists, and every tool description eats context.
+
+The fix was **dynamic tool routing**. Before each turn, a lightweight step scores the available tools against the user's message and exposes only the relevant few. The model sees five tools instead of fifty, picks correctly more often, and the prompt stays small. Each agent also gets **per-agent isolation and observability**: its own traces, token counts and tool-call logs, so when a customer says "it did something odd," I can see exactly what.
+
+## Keeping outputs safe
+
+As in the CMO suite, every tool call and every final answer goes through a **strict Pydantic schema**, and multi-step behaviour runs on **LangGraph state machines**. A custom agent that a customer wired to their CRM cannot emit a half-formed update. The API is **FastAPI** with **PostgreSQL session persistence** and **SSE streaming**, so long conversations survive restarts and the UI shows progress as it happens.
+
+## What I learned
+
+- Hybrid retrieval plus reranking is the floor for RAG that people trust. Vectors alone are not enough.
+- Credentials belong to the conversation, not the agent. Process isolation is cheaper than a breach.
+- Showing a model fewer, better tools beats giving it everything.
+- Observability per agent is not optional once customers build their own. It is the support tool.
+
+The platform is live inside Langslide, and the same sandbox design now backs the campaign agent work in Auroscale.

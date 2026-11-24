@@ -1,0 +1,63 @@
+import { BlogLayout } from "@/components/BlogLayout";
+
+export const meta = {
+  date: "2026-11-24",
+  title: "How I Built an AI CMO: 40+ Marketing Agents on Google ADK",
+  description:
+    "The problems I hit building Langslide's AI CMO and Marketing Agent Suite, and how parallel agents, evidence-backed audits and strict schemas solved them.",
+  image: "/images/langslide_cmo_agents.png",
+  tags: ["AI Agents", "Google ADK", "FastAPI", "Langslide", "Marketing"],
+};
+
+export default (props) => <BlogLayout meta={meta} {...props} />;
+
+When I joined Langslide, the brief sounded simple: build an AI that can do what a marketing team does. Research a company, audit its SEO, write content for every channel, plan ad budgets, and keep all of it consistent. What came out of it is the **AI CMO & Marketing Agent Suite**, 40+ specialised agents on Google ADK and FastAPI. This post is about the problems that actually mattered along the way and how I tackled each one.
+
+## Problem 1: one big agent does everything badly
+
+My first version was one large agent with a long prompt and twenty tools. It produced plausible marketing copy and wrong SEO numbers in the same breath. Every change to the prompt fixed one behaviour and broke another.
+
+The fix was to stop treating "marketing" as one task. I split the suite into domains, each with a small, well-scoped agent:
+
+- **Company Researcher and Feature Extractor** parse a site and pull out USPs, target personas and positioning.
+- **SEO Audit Engine** with four specialists: technical, performance, schema and content.
+- **Content agents** for LinkedIn, X, Reddit and Hacker News, each with its own voice rules.
+- **Ads and Campaign Planning** for Google and Meta Ads, including channel spend allocation.
+
+An orchestrator built with ADK's `LlmAgent` decides which of these run and passes the research output down to the rest. Each agent has one job, one output schema, and its own tests.
+
+## Problem 2: the SEO audit took four minutes
+
+The audit ran its specialists one after another. Each one fetched pages, waited on HTTP, then reasoned over the result. A full run was around **4 minutes**, far too slow for a product where people sit and watch.
+
+Two changes brought that down to **58 seconds**:
+
+1. **ADK `ParallelAgent`** runs the four specialists at the same time. They share the crawled evidence but never wait on each other.
+2. **`ThreadPoolExecutor` for crawling.** The crawler fetches 25+ URLs concurrently and finishes in under 4 seconds, so no specialist is blocked on I/O.
+
+The lesson was that most "slow LLM pipeline" problems are really sequential I/O problems in disguise.
+
+## Problem 3: audits that sounded confident and were wrong
+
+An LLM asked to "audit this site's SEO" will happily invent a missing sitemap or a slow page. Nobody can act on that.
+
+So every finding in the audit engine has to be **evidence-backed**. The specialists only reason over real HTTP responses: status codes, headers, parsed schema markup, measured response times. The output schema forces each finding to carry the evidence it came from, and the overall health score (0 to 100) is computed from those findings, not guessed by the model. If the evidence is missing, the finding is dropped.
+
+## Problem 4: agent output you cannot safely execute
+
+Downstream, agent outputs trigger real actions: a campaign budget, a post scheduled on a channel, an ad variant pushed to Meta. Free-text output is not acceptable there.
+
+Every agent returns a **strict Pydantic schema**. If the model's answer does not validate, it is retried with the validation error, not passed on. For multi-step flows I used **LangGraph state machines**, so each transition is explicit and a bad state cannot skip ahead. This is the single change that made the suite trustworthy enough to wire into real ad accounts.
+
+## Problem 5: the same agents, many customers
+
+The suite serves multiple workspaces at once. I built the API on **FastAPI** with **PostgreSQL session persistence**, so a long run survives a restart, and **ChromaDB vector search** for the RAG parts. Results stream to the UI as **SSE tokens**, which matters more than it sounds: a 58-second run feels fine when text is arriving the whole time, and feels broken when it is a spinner.
+
+## What I would tell myself at the start
+
+- Split by domain early. Small agents with one schema each beat one clever prompt.
+- Measure where time goes before adding caching or a faster model. It was I/O.
+- Never let the model produce a number it did not measure.
+- Validate every output at the boundary. Retrying on a schema error is cheap. Executing a bad action is not.
+
+The suite now powers Langslide's marketing product and became the foundation for the campaign agent in Auroscale, where the same ideas grew into a lead-planner agent supervising specialist sub-agents. That is a story for another post.
