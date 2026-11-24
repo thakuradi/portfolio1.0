@@ -5,8 +5,89 @@ import gocpt from "/public/images/gocpt.png"
 import invoiceGenerator from "public/images/Invoice_generator.png"
 import messenger from "public/images/messanger.png"
 import companyExtractor from "public/images/company_extractor.jpg"
+import auroscale from "public/images/auroscale.png"
+import langslideCmo from "public/images/langslide_cmo_agents.png"
+import langslideCustomAgents from "public/images/langslide_custom_agents.png"
 
 export const products = [
+  {
+    href: "https://auroscale.com",
+    title: "Auroscale",
+    description:
+      "AI marketing and video platform by Langslide. I own the unified FastAPI + Google ADK backend: campaign agents, AI video generation, billing and channel integrations.",
+    thumbnail: auroscale,
+    images: [auroscale],
+    stack: ["FastAPI", "Google ADK", "MongoDB", "Gemini", "Higgsfield", "Razorpay", "AWS", "SSE"],
+    slug: "auroscale",
+    content: (
+      <div>
+        <p>
+          Auroscale is Langslide&apos;s AI marketing and video platform. A single FastAPI service serves a 400+ endpoint API contract covering sign-up, workspaces, campaigns, insights, assets, channel connections and billing, with the agents mounted in the same process so the frontend sends one JWT everywhere.
+        </p>
+        <p>
+          <strong>Campaign agent:</strong> a lead planner agent on Google ADK breaks a request into tasks and hands each to a specialist sub-agent (Researcher, Strategist, Copywriter, Editor, Reviewer, Analyst, Scheduler), checks every result against a done-criterion with capped retries, and streams a live task board into the chat over SSE.
+        </p>
+        <p>
+          <strong>Video pipeline:</strong> canvas, chained shots, post videos, AI ads, product films and brand visuals rendered through Gemini, with Kling and Seedance via Higgsfield on paid plans, stored on S3 and priced per shot before the user confirms.
+        </p>
+        <p>
+          <strong>Platform:</strong> a workspace credit ledger gates and charges every agent run, Razorpay handles plans, subscriptions, GST invoices and signed webhooks, channel OAuth covers LinkedIn, Meta, X, Reddit, Google, TikTok, Pinterest and YouTube Ads with AES-encrypted tokens, and deploys go to AWS through GitHub Actions with OpenTelemetry tracing to Cloud Trace.
+        </p>
+      </div>
+    ),
+  },
+  {
+    href: "https://langslide.ai",
+    title: "AI CMO & Marketing Agent Suite",
+    description:
+      "Enterprise multi-agent marketing platform on Google ADK and FastAPI: 40+ specialised agents for company research, SEO audits, content, ads and campaign planning.",
+    thumbnail: langslideCmo,
+    images: [langslideCmo],
+    stack: ["Google ADK", "FastAPI", "Gemini", "ChromaDB", "ParallelAgent", "Python", "RAG"],
+    slug: "ai-cmo-agent-suite",
+    content: (
+      <div>
+        <p>
+          The Langslide agents platform orchestrates dozens of domain-specific AI agents built on the Google Agent Development Kit and FastAPI, with credit-based billing, multi-tenant sessions, real-time RAG and social channel integrations for LinkedIn, Meta, Reddit and Google Ads.
+        </p>
+        <p>
+          <strong>AI CMO suite:</strong> a company researcher and feature extractor that parses a site for USPs, personas and positioning; an evidence-backed SEO audit engine where four parallel specialist agents (technical, performance, schema, content) score a site 0–100 against real HTTP evidence; content agents for LinkedIn, X, Reddit and Hacker News; and ad copy and budget allocation for Google and Meta Ads.
+        </p>
+        <p>
+          <strong>Parallel execution engine:</strong> ADK ParallelAgent combined with ThreadPoolExecutor cut a full multi-agent SEO analysis from 4 minutes to 58 seconds and crawls 25+ URLs concurrently in under 4 seconds.
+        </p>
+        <p>
+          <strong>Beyond marketing:</strong> audience persona and customer journey agents, a ChromaDB-backed multi-source RAG engine over cross-channel ad data, executive intelligence briefings, outreach agents for email, SMS and direct mail, and vertical suites for healthcare, recruitment, B2B sales prospecting and transcript mining.
+        </p>
+      </div>
+    ),
+  },
+  {
+    href: "https://langslide.ai",
+    title: "Custom Agent & MCP Orchestrator",
+    description:
+      "No-code custom agent platform with hybrid RAG and a per-chat MCP sandbox that runs thousands of third-party tools as isolated, authenticated subprocesses.",
+    thumbnail: langslideCustomAgents,
+    images: [langslideCustomAgents],
+    stack: ["Python", "MCP", "FastAPI", "MongoDB", "OpenAI Embeddings", "BM25", "LangGraph", "Pydantic"],
+    slug: "custom-agent-platform",
+    content: (
+      <div>
+        <p>
+          A no-code platform where users assemble their own agents with hybrid RAG (OpenAI embeddings plus BM25), reranking, context compression and dynamic tool routing, with per-agent isolation and observability.
+        </p>
+        <p>
+          <strong>Per-chat MCP sandbox:</strong> agents are created without hardcoded credentials. Each chat session activates its own set of integrations, and the runtime spins up an isolated Python subprocess per enabled tool, passing only a connection id so credentials never cross between chats.
+        </p>
+        <p>
+          <strong>Tool registry:</strong> MCP servers live in a servers directory and are registered in MongoDB, so the frontend lists available tools dynamically and new integrations are added by writing the protocol handlers and seeding the registry.
+        </p>
+        <p>
+          <strong>Safety:</strong> strict Pydantic schemas and LangGraph state machines keep agent outputs safe to execute downstream, with PostgreSQL session persistence and real-time SSE token streaming on the API.
+        </p>
+      </div>
+    ),
+  },
   {
     href: "https://github.com/thakuradi/CompanyInfo_extractor",
     title: "Company Info Extractor",
