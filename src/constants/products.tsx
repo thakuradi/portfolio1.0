@@ -1,6 +1,5 @@
 import orom from "public/images/orom.png"
 import blockchain from "public/images/blockchain.jpg"
-import lawyergpt from "public/images/lawyergpt.png"
 import gocpt from "/public/images/gocpt.png"
 import invoiceGenerator from "public/images/Invoice_generator.png"
 import messenger from "public/images/messanger.png"
@@ -190,36 +189,6 @@ export const products = [
         <p>
           <strong>Business Value:</strong> Provides a cost-effective solution for professional invoicing, reduces manual calculation errors, and offers portability through PDF export. The tool addresses the common pain points of small businesses and freelancers who need quick, professional invoice generation without subscription costs.
         </p>
-      </div>
-    ),
-  },
-  {
-    href: "",
-    title: "Lawyer GPT",
-    description:
-      "AI Assistant for Legal Professionals and Students.",
-    thumbnail: lawyergpt,
-    images: [lawyergpt],
-    stack: [" Python", "Gradio"," Langchain", "OpenAI", "RAG", "LLM", "Fine-tuning."],
-    slug: "Lawyer GPT",
-    content: (
-      <div>
-        <p>
-          Sit eiusmod ex mollit sit quis ad deserunt. Sint aliqua aliqua ullamco
-          dolore nulla amet tempor sunt est ipsum. Dolor laborum eiusmod
-          cupidatat consectetur velit ipsum. Deserunt nisi in culpa laboris
-          cupidatat elit velit aute mollit nisi. Officia ad exercitation laboris
-          non cupidatat duis esse velit ut culpa et.{" "}
-        </p>
-        <p>
-          Exercitation pariatur enim occaecat adipisicing nostrud adipisicing
-          Lorem tempor ullamco exercitation quis et dolor sint. Adipisicing sunt
-          sit aute fugiat incididunt nostrud consequat proident fugiat id.
-          Officia aliquip laborum labore eu culpa dolor reprehenderit eu ex enim
-          reprehenderit. Cillum Lorem veniam eu magna exercitation.
-          Reprehenderit adipisicing minim et officia enim et veniam Lorem
-          excepteur velit adipisicing et Lorem magna.
-        </p>{" "}
       </div>
     ),
   },
