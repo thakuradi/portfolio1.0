@@ -17,10 +17,10 @@ export default function Home() {
         production LLM backends
       </Paragraph>
       <Paragraph className="max-w-xl mt-4">
-        I&apos;m currently building AI agent systems at{" "}
-        <Highlight>Auroscale</Highlight> and working as an Automation Engineer
-        (AI Agents &amp; Backend) at <Highlight>Langslide</Highlight>, where I
-        architect agent suites on Google ADK, LangGraph and FastAPI. Previously
+        I&apos;m currently building <Highlight>Auroscale</Highlight>, an AI
+        marketing and video platform by <Highlight>Langslide</Highlight>, where
+        I own the FastAPI + Google ADK backend: campaign agents orchestrating
+        specialist sub-agents, AI video generation and billing. Previously
         I co-founded <Highlight>Nexa Wings</Highlight>, a Generative-AI
         consultancy.
       </Paragraph>

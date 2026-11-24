@@ -1,12 +1,15 @@
 export const timeline = [
   {
     company: "Auroscale",
-    title: "AI Engineer",
-    date: "2025 - Present",
-    description: "Building production AI agent systems and LLM backends",
+    title: "AI Engineer (Backend & Agents)",
+    date: "2026 - Present",
+    description: "AI marketing and video platform by Langslide: campaign agents, AI video generation, ad insights and 100+ channel integrations",
     responsibilities: [
-      "Designing and shipping multi-agent workflows for production use",
-      "Building FastAPI backends with RAG, tool calling and streaming",
+      "Own the unified FastAPI + Google ADK backend (MongoDB) serving a 400+ endpoint API contract: auth, workspaces, campaigns, insights, assets and billing in one service",
+      "Built the Campaign agent as a lead planner orchestrating specialist sub-agents (Researcher, Strategist, Copywriter, Editor, Reviewer, Analyst) with a live task board streamed over SSE",
+      "Built the AI video pipeline across Gemini, Kling and Seedance via Higgsfield: canvas, chained shots, post videos, AI ads and product films, with S3 storage",
+      "Designed the workspace credit ledger and Razorpay billing (plans, subscriptions, GST invoices, signed webhooks) that gates and charges every agent run",
+      "Integrated channel OAuth for LinkedIn, Meta, X, Reddit, Google, TikTok, Pinterest and YouTube Ads with AES-encrypted tokens; shipped to AWS via GitHub Actions with OpenTelemetry tracing",
     ],
   },
   {

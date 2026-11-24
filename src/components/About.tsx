@@ -80,7 +80,7 @@ export default function About() {
 
         <Paragraph className=" mt-4">
           <strong>💻 Coding with Purpose</strong><br/>
-          Today I build AI agent systems at <Highlight>Auroscale</Highlight> and work as an Automation Engineer at <Highlight>Langslide</Highlight>, where I architected an enterprise AI CMO &amp; Marketing Agent Suite on Google ADK and FastAPI—40+ specialised agents, hybrid RAG, and a parallel execution engine that cut multi-agent SEO analysis from 4 minutes to 58 seconds. Before that I co‑founded <Highlight>Nexa Wings</Highlight>, a Generative-AI consultancy that shipped 30+ client projects across India, the UK, Switzerland and the USA—earning a <Highlight>2024 India 5000 MSME Award nomination</Highlight>.
+          Today I build <Highlight>Auroscale</Highlight>, Langslide&apos;s AI marketing and video platform—one FastAPI + Google ADK backend behind a 400+ endpoint API, with a campaign agent that plans work and supervises specialist sub-agents, AI video generation across Gemini and Kling, and Razorpay-backed credit billing. At <Highlight>Langslide</Highlight> I also architected an enterprise AI CMO &amp; Marketing Agent Suite on Google ADK and FastAPI—40+ specialised agents, hybrid RAG, and a parallel execution engine that cut multi-agent SEO analysis from 4 minutes to 58 seconds. Before that I co‑founded <Highlight>Nexa Wings</Highlight>, a Generative-AI consultancy that shipped 30+ client projects across India, the UK, Switzerland and the USA—earning a <Highlight>2024 India 5000 MSME Award nomination</Highlight>.
         </Paragraph>
 
         <Paragraph className=" mt-4">
