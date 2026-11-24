@@ -8,8 +8,35 @@ import companyExtractor from "public/images/company_extractor.jpg"
 import auroscale from "public/images/auroscale.png"
 import langslideCmo from "public/images/langslide_cmo_agents.png"
 import langslideCustomAgents from "public/images/langslide_custom_agents.png"
+import multiAgentOrchestration from "public/images/multi_agent_orchestration.svg"
 
 export const products = [
+  {
+    href: "https://github.com/thakuradi/Real-Time-Multi-Agent-LLM-Orchestration-and-Evaluation-System",
+    title: "Multi-Agent LLM Orchestration & Evaluation System",
+    description:
+      "LangGraph planner-executor platform with RAG, critique and synthesis sub-agents, SSE streaming, a 6-dimension eval harness and a self-improving prompt loop.",
+    thumbnail: multiAgentOrchestration,
+    images: [multiAgentOrchestration],
+    stack: ["LangGraph", "GPT-4o", "FastAPI", "PostgreSQL", "pgvector", "Celery", "Redis", "LangSmith", "Pydantic"],
+    slug: "multi-agent-orchestration",
+    content: (
+      <div>
+        <p>
+          An autonomous multi-agent platform where a Planner agent builds a routing plan with dependencies and an Executor orchestrates handoffs through a shared context schema. LangGraph conditional edges handle retries, routing and compression triggers, and results stream to clients over SSE from FastAPI.
+        </p>
+        <p>
+          <strong>Sub-agents:</strong> Decomposition builds a dependency DAG for sub-tasks, RAG does multi-hop retrieval with citations, Critique scores confidence at span level rather than on whole outputs, and Synthesis resolves contradictions with provenance mapping. Tools (web search, code sandbox, NL-to-SQL, self-reflection) return structured error envelopes with bounded retries.
+        </p>
+        <p>
+          <strong>Context budget manager:</strong> tracks token use per agent per turn, triggers a compression agent on overflow and logs budget violations as policy violations.
+        </p>
+        <p>
+          <strong>Evaluation and self-improvement:</strong> an automated parallel harness (Pytest + LangSmith) runs baseline, ambiguous and adversarial cases and scores six dimensions (correctness, citations, contradictions, efficiency, compliance, agreement) on every change with sub-second overhead. A meta-agent proposes structured prompt diffs that a human approves before targeted re-evaluation. Persistence on PostgreSQL with Alembic, vectors in ChromaDB/pgvector, async jobs on Celery and Redis.
+        </p>
+      </div>
+    ),
+  },
   {
     href: "https://auroscale.com",
     title: "Auroscale",

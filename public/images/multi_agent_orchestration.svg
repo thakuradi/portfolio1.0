@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="1200" height="750" fill="#111827"/>
+  <g stroke="#818cf8" stroke-width="5" fill="none">
+    <path d="M270 140 H440"/>
+    <path d="M270 330 H440"/>
+    <path d="M270 330 L440 520"/>
+    <path d="M680 140 L850 330"/>
+    <path d="M680 330 H850"/>
+    <path d="M680 520 L850 330"/>
+    <path d="M150 185 V285"/>
+  </g>
+  <g fill="#1f2937" stroke="#6366f1" stroke-width="4">
+    <rect x="30" y="95" width="240" height="90" rx="20"/>
+    <rect x="30" y="285" width="240" height="90" rx="20"/>
+    <rect x="440" y="95" width="240" height="90" rx="20"/>
+    <rect x="440" y="285" width="240" height="90" rx="20"/>
+    <rect x="440" y="475" width="240" height="90" rx="20"/>
+    <rect x="850" y="285" width="240" height="90" rx="20"/>
+  </g>
+  <g fill="#ffffff" font-size="34" text-anchor="middle" dominant-baseline="middle">
+    <text x="150" y="140">Planner</text>
+    <text x="150" y="330">Executor</text>
+    <text x="560" y="140">RAG</text>
+    <text x="560" y="330">Critique</text>
+    <text x="560" y="520">Synthesis</text>
+    <text x="970" y="330">Eval loop</text>
+  </g>
+  <text x="600" y="665" fill="#ffffff" font-size="56" font-weight="700" text-anchor="middle" dominant-baseline="middle">Multi-Agent LLM Orchestration &amp; Evals</text>
+</svg>
