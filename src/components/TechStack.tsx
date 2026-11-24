@@ -4,7 +4,28 @@ import { Heading } from "./Heading";
 import { twMerge } from "tailwind-merge";
 
 export const TechStack = () => {
+  const square = "h-10 w-10";
   const stack = [
+    ...[
+      ["Python", "python"],
+      ["TypeScript", "typescript"],
+      ["FastAPI", "fastapi"],
+      ["Django", "django"],
+      ["LangChain", "langchain"],
+      ["Gemini", "gemini"],
+      ["OpenAI", "openai"],
+      ["PostgreSQL", "postgresql"],
+      ["MongoDB", "mongodb"],
+      ["Redis", "redis"],
+      ["Docker", "docker"],
+      ["Google Cloud", "googlecloud"],
+      ["GitHub Actions", "githubactions"],
+      ["React", "react"],
+    ].map(([title, file]) => ({
+      title,
+      src: `/images/logos/${file}.svg`,
+      className: square,
+    })),
     {
       title: "Next.js",
       src: "/images/logos/next.png",
@@ -64,6 +85,9 @@ export const TechStack = () => {
             width={`200`}
             height={`200`}
             alt={item.title}
+            title={item.title}
+            // next/image's optimizer rejects SVGs, so serve them as-is
+            unoptimized={item.src.endsWith(".svg")}
             className={twMerge("object-contain mr-4 mb-4", item.className)}
           />
         ))}
