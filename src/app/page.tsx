@@ -12,15 +12,17 @@ export default function Home() {
       <span className="text-4xl">👋</span>
       <Heading className="font-black">Hello there! I&apos;m Aditya</Heading>
       <Paragraph className="max-w-xl mt-4">
-        I&apos;m a full-stack developer that loves{" "}
-        <Highlight>building products</Highlight> and web apps that can impact
-        millions of lives
+        I&apos;m a full-stack AI engineer that loves{" "}
+        <Highlight>building multi-agent systems</Highlight>, RAG pipelines and
+        production LLM backends
       </Paragraph>
       <Paragraph className="max-w-xl mt-4">
-        I&apos;m currently serving as{" "}
-        <Highlight>Full Stack Automation Engineer</Highlight> at Connektra.io, 
-        an AI-powered enterprise integration platform. I specialize in building 
-        scalable automation solutions and AI-driven workflow systems.
+        I&apos;m currently building AI agent systems at{" "}
+        <Highlight>Auroscale</Highlight> and working as an Automation Engineer
+        (AI Agents &amp; Backend) at <Highlight>Langslide</Highlight>, where I
+        architect agent suites on Google ADK, LangGraph and FastAPI. Previously
+        I co-founded <Highlight>Nexa Wings</Highlight>, a Generative-AI
+        consultancy.
       </Paragraph>
       <Heading
         as="h2"

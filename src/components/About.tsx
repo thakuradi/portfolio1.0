@@ -80,11 +80,11 @@ export default function About() {
 
         <Paragraph className=" mt-4">
           <strong>💻 Coding with Purpose</strong><br/>
-          At <Highlight>Connektra.io</Highlight>, I design AI-driven agents and automation workflows—connecting platforms like Shopify, HubSpot, and ERP systems to automate mundane processes. As co‑founder of <Highlight>NexaWings</Highlight>, I lead product innovation with AI chatbots and scalable SaaS solutions—earning recognition with a <Highlight>2024 India 5000 MSME Award nomination</Highlight>.
+          Today I build AI agent systems at <Highlight>Auroscale</Highlight> and work as an Automation Engineer at <Highlight>Langslide</Highlight>, where I architected an enterprise AI CMO &amp; Marketing Agent Suite on Google ADK and FastAPI—40+ specialised agents, hybrid RAG, and a parallel execution engine that cut multi-agent SEO analysis from 4 minutes to 58 seconds. Before that I co‑founded <Highlight>Nexa Wings</Highlight>, a Generative-AI consultancy that shipped 30+ client projects across India, the UK, Switzerland and the USA—earning a <Highlight>2024 India 5000 MSME Award nomination</Highlight>.
         </Paragraph>
-        
+
         <Paragraph className=" mt-4">
-          From a real-time messaging app and invoice generator to AI agents built using <Highlight>LangChain, LangGraph, and LangSmith</Highlight>, my development mantra is to blend architectural rigor with clean, beautiful experience design.
+          From real-time voice-calling pipelines and invoice generators to multi-agent orchestration built with <Highlight>LangGraph, Google ADK, and LangSmith</Highlight>, my development mantra is to blend architectural rigor with clean, beautiful experience design.
         </Paragraph>
 
         <Paragraph className=" mt-4">

@@ -63,10 +63,10 @@ export const products = [
     href: "https://github.com/thakuradi/Invoice_Generator",
     title: "Invoice Generator",
     description:
-      "Professional invoice creation tool with dynamic calculations, PDF export, and real-time totals - perfect for freelancers and small businesses.",
+      "Full-stack invoicing platform with a live editor, template customisation and PDF export, built on Next.js App Router with Prisma and PostgreSQL.",
     thumbnail: invoiceGenerator,
     images: [invoiceGenerator],
-    stack: ["React", "JavaScript", "jsPDF", "HTML/CSS", "Vercel"],
+    stack: ["Next.js", "TypeScript", "NextAuth", "shadcn/ui", "Prisma", "PostgreSQL", "Zod", "jsPDF", "Vercel"],
     slug: "invoice-generator",
     content: (
       <div>
@@ -77,7 +77,7 @@ export const products = [
           <strong>Key Features:</strong> Dynamic form inputs for flexible item management, real-time calculations that automatically update totals as users modify details, and seamless PDF export functionality. The application supports multiple line items with quantity, unit price, tax, and discount calculations, ensuring accuracy and professionalism in every invoice.
         </p>
         <p>
-          <strong>Technical Implementation:</strong> Built using React with responsive design principles, the application leverages modern JavaScript for dynamic calculations and PDF generation libraries for document export. Deployed on Vercel for optimal performance and reliability.
+          <strong>Technical Implementation:</strong> Built with Next.js App Router and TypeScript, with NextAuth for authentication, shadcn/ui components and jsPDF for document export. Indexed Prisma queries on PostgreSQL and Zod validation cut serverless API latency by around 35% on Vercel.
         </p>
         <p>
           <strong>Business Value:</strong> Provides a cost-effective solution for professional invoicing, reduces manual calculation errors, and offers portability through PDF export. The tool addresses the common pain points of small businesses and freelancers who need quick, professional invoice generation without subscription costs.
